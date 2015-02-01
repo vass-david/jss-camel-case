@@ -1,8 +1,7 @@
 !function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),f.jssCamelCase=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict'
 
-var r1 = /([A-Z])/g
-var r2 = /[-_\s]+/g
+var regExp = /([A-Z])/g
 
 /**
  * Allow camel cased property names by converting them back to dasherized.
@@ -15,18 +14,15 @@ module.exports = function (rule) {
 
     if (!style) return
 
-    var newStyle = {}
+    rule.style = {}
 
     for (var prop in style) {
         var value = style[prop]
         prop = prop
-            .replace(r1, '-$1')
-            .replace(r2, '-')
+            .replace(regExp, '-$1')
             .toLowerCase()
-        newStyle[prop] = value
+        rule.style[prop] = value
     }
-
-    rule.style = newStyle
 }
 
 },{}]},{},[1])(1)

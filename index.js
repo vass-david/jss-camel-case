@@ -1,7 +1,6 @@
 'use strict'
 
-var r1 = /([A-Z])/g
-var r2 = /[-_\s]+/g
+var regExp = /([A-Z])/g
 
 /**
  * Allow camel cased property names by converting them back to dasherized.
@@ -14,16 +13,13 @@ module.exports = function (rule) {
 
     if (!style) return
 
-    var newStyle = {}
+    rule.style = {}
 
     for (var prop in style) {
         var value = style[prop]
         prop = prop
-            .replace(r1, '-$1')
-            .replace(r2, '-')
+            .replace(regExp, '-$1')
             .toLowerCase()
-        newStyle[prop] = value
+        rule.style[prop] = value
     }
-
-    rule.style = newStyle
 }
