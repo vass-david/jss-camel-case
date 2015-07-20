@@ -1,7 +1,7 @@
 {
   "name": "jss-camel-case",
   "description": "Allows to write camel cased rule properties.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": {
     "name": "Oleg Slobodskoi",
     "email": "oleg008@gmail.com"
@@ -24,6 +24,6 @@
     }
   ],
   "dependencies": {
-    "jsstyles": "^1.0.0"
+    "jsstyles": "^2.1.0"
   }
 }
