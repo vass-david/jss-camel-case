@@ -10,7 +10,7 @@ QUnit.module('Camel Case plugin', {
 })
 
 test('camel cased properties', function () {
-    var ss = new jss.StyleSheet({
+    var ss = jss.createStyleSheet({
         a: {
             fontSize: '20px',
             zIndex: 1,
