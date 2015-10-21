@@ -14,11 +14,11 @@ Internally it converts everything back to dash separated names.
 
 ```javascript
 import jss from 'jss'
-import cc from 'jss-camel-case'
+import camelCase from 'jss-camel-case'
 
-jss.use(cc)
+jss.use(camelCase())
 
-const styleSheet = jss.createStyleSheet({
+let sheet = jss.createStyleSheet({
   container: {
     fontSize: '20px',
     zIndex: 1,
@@ -28,7 +28,7 @@ const styleSheet = jss.createStyleSheet({
 ```
 
 ```javascript
-console.log(styleSheet.toString())
+console.log(sheet.toString())
 ```
 ```css
 .jss-0-0 {
@@ -39,12 +39,11 @@ console.log(styleSheet.toString())
 ```
 
 ```javascript
-console.log(styleSheet.classes)
+console.log(sheet.classes)
 ```
 ```javascript
 { container: "jss-0-0" }
 ```
-
 
 ## Run tests
 
@@ -52,7 +51,6 @@ console.log(styleSheet.classes)
 npm i
 npm run test
 ```
-
 
 ## License
 

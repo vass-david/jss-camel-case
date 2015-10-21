@@ -2,7 +2,7 @@
 
 QUnit.module('Camel Case plugin', {
   setup: function () {
-    jss.use(jssCamelCase)
+    jss.use(jssCamelCase())
   },
   teardown: function () {
     jss.plugins.registry = []
