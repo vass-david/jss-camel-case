@@ -45,6 +45,10 @@ console.log(sheet.classes)
 { container: "jss-0-0" }
 ```
 
+## Issues
+
+File a bug against [jsstyles/jss prefixed with \[jss-camel-case\]](https://github.com/isaacs/github/issues/new?title=[jss-camel-case]%20).
+
 ## Run tests
 
 ```bash
