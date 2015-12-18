@@ -47,7 +47,7 @@ console.log(sheet.classes)
 
 ## Issues
 
-File a bug against [jsstyles/jss prefixed with \[jss-camel-case\]](https://github.com/jsstyles/jss-camel-case/issues/new?title=[jss-camel-case]%20).
+File a bug against [jsstyles/jss prefixed with \[jss-camel-case\]](https://github.com/jsstyles/jss/issues/new?title=[jss-camel-case]%20).
 
 ## Run tests
 
