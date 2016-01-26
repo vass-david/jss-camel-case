@@ -8,7 +8,7 @@ const regExp = /([A-Z])/g
  */
 export default function jssCamelCase() {
   return rule => {
-    let {style} = rule
+    const {style} = rule
     if (!style) return
     rule.style = {}
     for (let prop in style) {
@@ -19,6 +19,6 @@ export default function jssCamelCase() {
   }
 }
 
-function replace (c) {
+function replace(c) {
   return '-' + c.toLowerCase()
 }
