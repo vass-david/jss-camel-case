@@ -13,8 +13,12 @@ export default function jssCamelCase() {
     rule.style = {}
     for (let prop in style) {
       const value = style[prop]
-      prop = prop.replace(regExp, '-$1').toLowerCase()
+      prop = prop.replace(regExp, replace)
       rule.style[prop] = value
     }
   }
+}
+
+function replace (c) {
+  return '-' + c.toLowerCase()
 }
