@@ -19,3 +19,26 @@ test('camel cased properties', function () {
   }, {named: false})
   equal(ss.toString(), 'a {\n  font-size: 20px;\n  z-index: 1;\n  line-height: 1.2;\n}')
 })
+
+test('camel cased @font-face with array of styles', function () {
+  var ss = jss.createStyleSheet({
+    '@font-face': [
+      {
+        fontFamily: 'Lato-Light',
+        src: 'url("/fonts/Lato-Light.ttf") format("truetype")',
+      },
+      {
+        fontFamily: 'Lato-Bold',
+        src: 'url("/fonts/Lato-Bold.ttf") format("truetype")',
+      },
+    ],
+  })
+  equal(ss.toString(), '@font-face {\n' +
+                       '  font-family: Lato-Light;\n' +
+                       '  src: url("/fonts/Lato-Light.ttf") format("truetype");\n' +
+                       '}\n' +
+                       '@font-face {\n' +
+                       '  font-family: Lato-Bold;\n' +
+                       '  src: url("/fonts/Lato-Bold.ttf") format("truetype");\n' +
+                       '}\n')
+})
