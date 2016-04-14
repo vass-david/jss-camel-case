@@ -10,18 +10,18 @@ QUnit.module('Camel Case plugin', {
 })
 
 test('camel cased properties', function () {
-  var ss = jss.createStyleSheet({
+  var sheet = jss.createStyleSheet({
     a: {
       fontSize: '20px',
       zIndex: 1,
       lineHeight: 1.2
     }
   }, {named: false})
-  equal(ss.toString(), 'a {\n  font-size: 20px;\n  z-index: 1;\n  line-height: 1.2;\n}')
+  equal(sheet.toString(), 'a {\n  font-size: 20px;\n  z-index: 1;\n  line-height: 1.2;\n}')
 })
 
 test('camel cased @font-face with array of styles', function () {
-  var ss = jss.createStyleSheet({
+  var sheet = jss.createStyleSheet({
     '@font-face': [
       {
         fontFamily: 'Lato-Light',
@@ -33,12 +33,14 @@ test('camel cased @font-face with array of styles', function () {
       },
     ],
   })
-  equal(ss.toString(), '@font-face {\n' +
-                       '  font-family: Lato-Light;\n' +
-                       '  src: url("/fonts/Lato-Light.ttf") format("truetype");\n' +
-                       '}\n' +
-                       '@font-face {\n' +
-                       '  font-family: Lato-Bold;\n' +
-                       '  src: url("/fonts/Lato-Bold.ttf") format("truetype");\n' +
-                       '}\n')
+  const expected =
+    '@font-face {\n' +
+    '  font-family: Lato-Light;\n' +
+    '  src: url("/fonts/Lato-Light.ttf") format("truetype");\n' +
+    '}\n' +
+    '@font-face {\n' +
+    '  font-family: Lato-Bold;\n' +
+    '  src: url("/fonts/Lato-Bold.ttf") format("truetype");\n' +
+    '}\n'
+  equal(sheet.toString(), expected, 'converted correctly')
 })

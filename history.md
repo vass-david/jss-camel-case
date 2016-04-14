@@ -1,3 +1,7 @@
+## 1.1.0 / 2015-04-14
+
+- Support font-face rule style as an array.
+
 ## 1.0.2 / 2015-03-24
 
 - update babel
