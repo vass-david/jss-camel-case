@@ -6,7 +6,7 @@ const regExp = /([A-Z])/g
  * @return {String}
  */
 function replace(str) {
-  return '-' + str.toLowerCase()
+  return `-${str.toLowerCase()}`
 }
 
 /**
@@ -30,18 +30,16 @@ function convertCase(style) {
  *
  * @param {Rule} rule
  */
-export default () => {
-  return function jssCamelCase(rule) {
-    const {style} = rule
-    if (!style) return
-    if (Array.isArray(style)) {
-      // Handle rules like @font-face, which can have multiple styles in an array
-      for (let index = 0; index < style.length; index++) {
-        style[index] = convertCase(style[index])
-      }
+export default () => rule => {
+  const {style} = rule
+  if (!style) return
+  if (Array.isArray(style)) {
+    // Handle rules like @font-face, which can have multiple styles in an array
+    for (let index = 0; index < style.length; index++) {
+      style[index] = convertCase(style[index])
     }
-    else {
-      rule.style = convertCase(style)
-    }
+  }
+  else {
+    rule.style = convertCase(style)
   }
 }

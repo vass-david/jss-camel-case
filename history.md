@@ -1,3 +1,7 @@
+## 2.0.0 / 2016-08-01
+
+- Update dependencies, update to jss 5
+
 ## 1.1.0 / 2015-04-14
 
 - Support font-face rule style as an array.

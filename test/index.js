@@ -1,5 +1,7 @@
 'use strict'
 
+var jss = jss.default
+
 QUnit.module('Camel Case plugin', {
   setup: function () {
     jss.use(jssCamelCase.default())
@@ -33,7 +35,7 @@ test('camel cased @font-face with array of styles', function () {
       },
     ],
   })
-  const expected =
+  const css =
     '@font-face {\n' +
     '  font-family: Lato-Light;\n' +
     '  src: url("/fonts/Lato-Light.ttf") format("truetype");\n' +
@@ -41,6 +43,6 @@ test('camel cased @font-face with array of styles', function () {
     '@font-face {\n' +
     '  font-family: Lato-Bold;\n' +
     '  src: url("/fonts/Lato-Bold.ttf") format("truetype");\n' +
-    '}\n'
+    '}'
   equal(sheet.toString(), expected, 'converted correctly')
 })
